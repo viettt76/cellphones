@@ -25,12 +25,10 @@ export default function InitLoadingProvider({ children }: { children: ReactNode 
     useEffect(() => {
         const initAuth = async () => {
             try {
-                const res = await refreshTokenService();
-                dispatch(setAccessToken(res.data?.accessToken));
-
-                apiClient.init(store, res.data?.accessToken as string, handleLogout);
-
-                dispatch(fetchCurrentUser());
+                // const res = await refreshTokenService();
+                // dispatch(setAccessToken(res.data?.accessToken));
+                // apiClient.init(store, res.data?.accessToken as string, handleLogout);
+                // dispatch(fetchCurrentUser());
             } catch (error) {
                 console.error(error);
             } finally {
